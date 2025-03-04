@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Header Files\MainMenu">
+      <UniqueIdentifier>{1c4b7946-ce62-475e-a969-8ec38fa20972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MainMenu">
+      <UniqueIdentifier>{0972840d-2480-4c09-9fc6-342c412704b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\EncounterTypesPage">
+      <UniqueIdentifier>{927ad737-2494-48c5-b5cd-7409184d9197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EncounterTypesPage">
+      <UniqueIdentifier>{3db118a0-6f90-4dfc-a3bf-a098eaaab6bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EncountersPage">
+      <UniqueIdentifier>{e22bf4f6-7174-46ae-996c-ed3b5b1bc5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\EncountersPage">
+      <UniqueIdentifier>{3c1652ef-6b18-4ed7-a315-96f4b4b7cce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Database">
+      <UniqueIdentifier>{98f72dae-0431-4d13-8250-698bb58afef3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Database">
+      <UniqueIdentifier>{099fc7da-4619-4470-abb6-4075370b5485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SingleEncounterPage">
+      <UniqueIdentifier>{f926d187-6939-4b66-a4f7-9fc4dda4449c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SingleEncounterPage">
+      <UniqueIdentifier>{9800c255-a668-4bf7-8d34-4d4dcc0123ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CreateEncounterTypePage">
+      <UniqueIdentifier>{42a7d065-bc7f-41b6-8a00-b5a5d5b2ab04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CreateEncounterTypePage">
+      <UniqueIdentifier>{e3d70cb7-df01-4c93-959d-0a5837e7b803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CreateSingleEncounterPage">
+      <UniqueIdentifier>{98da7272-f6ee-4e20-a1a9-96ec9c8bd6ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CreateSingleEncounterPage">
+      <UniqueIdentifier>{cff7f4ee-6b85-4cc0-8dff-0ef38da96770}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="DNDRandomEncounter.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="DNDRandomEncounter.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtMoc Include="DNDRandomEncounter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="DNDRandomEncounter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EncounterType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuPage.cpp">
+      <Filter>Source Files\MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="Encounter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EncounterTypesPage.cpp">
+      <Filter>Source Files\EncounterTypesPage</Filter>
+    </ClCompile>
+    <ClCompile Include="EncountersPage.cpp">
+      <Filter>Source Files\EncountersPage</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Source Files\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleEncounterPage.cpp">
+      <Filter>Source Files\SingleEncounterPage</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateEncounterTypePage.cpp">
+      <Filter>Source Files\CreateEncounterTypePage</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateSingleEncounterPage.cpp">
+      <Filter>Source Files\CreateSingleEncounterPage</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EncounterType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuPage.h">
+      <Filter>Header Files\MainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="Encounter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EncounterTypesPage.h">
+      <Filter>Header Files\EncounterTypesPage</Filter>
+    </ClInclude>
+    <ClInclude Include="EncountersPage.h">
+      <Filter>Header Files\EncountersPage</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>Header Files\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleEncounterPage.h">
+      <Filter>Header Files\SingleEncounterPage</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateEncounterTypePage.h">
+      <Filter>Header Files\CreateEncounterTypePage</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateSingleEncounterPage.h">
+      <Filter>Header Files\CreateSingleEncounterPage</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

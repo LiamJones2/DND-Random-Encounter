@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/DNDRandomEncounter">
+        <file>dnd-wallpaper.jpeg</file>
+        <file>dnd-wallpaper.jpg</file>
+        <file>shopsign.png</file>
+    </qresource>
+</RCC>

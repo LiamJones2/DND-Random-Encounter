@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DNDRandomEncounterClass</class>
+ <widget class="QMainWindow" name="DNDRandomEncounterClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>DNDRandomEncounter</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow::title { background-color: #3498db; }
+QMainWindow::close-button { background-color: red; }</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>500</height>
+    </size>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #fff;</string>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="MainMenuPage">
+     <widget class="QGroupBox" name="MainMenu">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>801</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QPushButton" name="startButton">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>440</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Start</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="TitleText">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>30</y>
+         <width>271</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    color: white;               /* Set the base color (inner color) */
+    background-color: transparent;
+    padding: 2px 5px;
+    border-radius: 3px;
+}</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span&gt;Random Encounters&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>420</y>
+         <width>471</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 60px; background-color: #462521;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exitButton">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>440</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Exit</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="TitleBackground">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>-10</y>
+         <width>271</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="DNDRandomEncounter.qrc">:/DNDRandomEncounter/shopsign.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="BackgroundWallpaper">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>800</width>
+         <height>500</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="DNDRandomEncounter.qrc">:/DNDRandomEncounter/dnd-wallpaper.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>BackgroundWallpaper</zorder>
+      <zorder>label</zorder>
+      <zorder>exitButton</zorder>
+      <zorder>TitleBackground</zorder>
+      <zorder>TitleText</zorder>
+      <zorder>startButton</zorder>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="EncounterTypesPage">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <widget class="QGroupBox" name="EncounterTypes">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>801</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QLabel" name="EncounterTypesWallpaper">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>801</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="DNDRandomEncounter.qrc">:/DNDRandomEncounter/dnd-wallpaper.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="SwitchToCreateEncounterType">
+       <property name="geometry">
+        <rect>
+         <x>710</x>
+         <y>100</y>
+         <width>41</width>
+         <height>36</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px; 
+    border: 2px solid #fff;
+}
+
+QPushButton::hover {
+    background-color: #fff;
+    color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>✚</string>
+       </property>
+       <property name="icon">
+        <iconset theme="camera-photo"/>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="EncounterTypesBox">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>150</y>
+         <width>729</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:black;border:transparent; border-radius:20px;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QGroupBox" name="EncounterTypesGroupBox">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>721</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid red;</string>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="BackToMainMenu">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>191</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>500</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Back To Main Menu</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>10</width>
+         <height>16</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QScrollBar" name="EncounterTypesScrollBar">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>420</y>
+         <width>721</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QScrollBar:horizontal {
+        background-color: #F0F0F0;
+        height: 20px;
+        margin: 0px 0px 0px 0px;
+    }
+    QScrollBar::handle:horizontal {
+        background-color: #000000;
+        border-radius: 10px;
+        min-width: 30%;
+    }
+    QScrollBar::add-line:horizontal,
+    QScrollBar::sub-line:horizontal {
+        width: 0;
+        height: 0;
+        subcontrol-position: center;
+    }</string>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="EncountersPage">
+     <widget class="QGroupBox" name="Encounters">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>801</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QLabel" name="EncountersBackgroundWallpaper">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>800</width>
+         <height>500</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="DNDRandomEncounter.qrc">:/DNDRandomEncounter/dnd-wallpaper.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="BackToEncounterTypesPageButton">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>151</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Back To Encounter Types</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="EncountersBox">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>100</y>
+         <width>641</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0.7);
+border: black;
+border-radius: 20px;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QGroupBox" name="EncountersGroupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>621</width>
+          <height>321</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:transparent;</string>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+       </widget>
+       <widget class="QScrollBar" name="EncountersScrollBar">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>0</y>
+          <width>21</width>
+          <height>341</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QScrollBar:vertical {
+        background-color: #F0F0F0;
+        width: 20px;
+        margin: 0px 0px 0px 0px;
+    }
+    QScrollBar::handle:vertical {
+        background-color: #000000;
+        border-radius: 10px;
+        min-height: 200px;
+    }
+QScrollBar::add-line:vertical,
+    QScrollBar::sub-line:vertical {
+        width: 0;
+        height: 0;
+        subcontrol-position: center;
+    }</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="GetRandomEncounter">
+       <property name="geometry">
+        <rect>
+         <x>570</x>
+         <y>30</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Random Encounter</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="SwitchToCreateEncounterButton">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>30</y>
+         <width>41</width>
+         <height>36</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px; 
+    border: 2px solid #fff;
+}
+
+QPushButton::hover {
+    background-color: #fff;
+    color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>✚</string>
+       </property>
+       <property name="icon">
+        <iconset theme="camera-photo"/>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="SingleEncounterPage">
+     <widget class="QGroupBox" name="SingleEncounterBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>801</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QPushButton" name="BackToEncountersPageButton">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>440</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Back To Encounters</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="SingleEncounterBackgroundWallpaper">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>800</width>
+         <height>500</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="DNDRandomEncounter.qrc">:/DNDRandomEncounter/dnd-wallpaper.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="EncounterImage">
+       <property name="geometry">
+        <rect>
+         <x>520</x>
+         <y>50</y>
+         <width>241</width>
+         <height>331</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10%;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="EncounterName">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>30</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0.7);
+border: black;
+border-radius: 10px;color:white;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="EncounterDescription">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>100</y>
+         <width>441</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0.7);
+border: black;
+border-radius: 10px;color:white; font-size:20px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>SingleEncounterBackgroundWallpaper</zorder>
+      <zorder>BackToEncountersPageButton</zorder>
+      <zorder>EncounterImage</zorder>
+      <zorder>EncounterName</zorder>
+      <zorder>EncounterDescription</zorder>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="CreateEncounterTypePage">
+     <widget class="QGroupBox" name="CreateEncounterTypePageBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>801</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QLabel" name="CreateEncounterTypeImageInput">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>170</y>
+         <width>241</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="BackToEncounterType">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>30</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Back To Encounter Types</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="CreateEncounterTypeWallpaper">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>801</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="DNDRandomEncounter.qrc">:/DNDRandomEncounter/dnd-wallpaper.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="CreateEncounterTypeButton">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>420</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+padding: 5px 10px; 
+    border: 2px solid #fff;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Create Encounter Type</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="CreateEncounterTypeNameInput">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>80</y>
+         <width>181</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+padding: 5px 10px; 
+    border: 2px solid #fff;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Enter encounter type name...</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="UploadEncounterTypeImage">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>150</y>
+         <width>75</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Upload</string>
+       </property>
+      </widget>
+      <zorder>CreateEncounterTypeWallpaper</zorder>
+      <zorder>BackToEncounterType</zorder>
+      <zorder>CreateEncounterTypeButton</zorder>
+      <zorder>CreateEncounterTypeNameInput</zorder>
+      <zorder>UploadEncounterTypeImage</zorder>
+      <zorder>CreateEncounterTypeImageInput</zorder>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="CreateSingleEncounterPage">
+     <widget class="QGroupBox" name="CreateSingleEncounterPageBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="CreateSingleEncounterImageInput">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>170</y>
+         <width>241</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="CreateSingleEncounterButton">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>420</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+padding: 5px 10px; 
+    border: 2px solid #fff;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Create Encounter Type</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="UploadSingleEncounterImage">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>150</y>
+         <width>75</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Upload</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="CreateSingleEncounterNameInput">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>70</y>
+         <width>181</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+padding: 5px 10px; 
+    border: 2px solid #fff;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Enter encounter name...</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="CreateSingleEncounterWallpaper">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>801</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="DNDRandomEncounter.qrc">:/DNDRandomEncounter/dnd-wallpaper.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="BackToEncountersButton">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>30</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #000;
+color: #fff;
+border-radius: 20px;
+}
+QPushButton::hover {
+background-color: #fff;
+color: #000;
+}</string>
+       </property>
+       <property name="text">
+        <string>Back To Encounter Types</string>
+       </property>
+      </widget>
+      <zorder>CreateSingleEncounterWallpaper</zorder>
+      <zorder>CreateSingleEncounterImageInput</zorder>
+      <zorder>CreateSingleEncounterButton</zorder>
+      <zorder>UploadSingleEncounterImage</zorder>
+      <zorder>CreateSingleEncounterNameInput</zorder>
+      <zorder>BackToEncountersButton</zorder>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="DNDRandomEncounter.qrc"/>
+ </resources>
+ <connections/>
+</ui>
