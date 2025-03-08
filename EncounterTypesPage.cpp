@@ -13,6 +13,7 @@ namespace EncounterTypesPage {
 
     // Width of each button size
     int buttonWidth = 500;
+    int buttonHeight = 300;
 
     // Stores an EncounterType version of each encounter type loaded from the DB at the start of the application
     std::vector<EncounterType> encounterTypesFromDB;
@@ -37,7 +38,7 @@ void EncounterTypesPage::SetUIItemsEncounterTypes(QWidget& mainWindow) {
     backToMainMenu = mainWindow.findChild<QPushButton*>("BackToMainMenu");
     encounterTypesScrollBar = mainWindow.findChild<QScrollBar*>("EncounterTypesScrollBar");
 
-    encounterTypesScrollBar->setMaximum(encounterTypesGroupBox->width());
+    encounterTypesScrollBar->setMaximum(encounterTypesGroupBox->height());
 }
 
 void EncounterTypesPage::SetupEncounterTypesPixmap() {
@@ -58,13 +59,13 @@ void EncounterTypesPage::resizeEncounterTypes(QResizeEvent* event) {
 
     // Calculate dimensions based on the new size
     int groupBoxWidth = static_cast<int>(newSize.width() * 0.9);
-    int groupBoxHeight = static_cast<int>(newSize.height() * 0.5);
+    int groupBoxHeight = static_cast<int>(newSize.height() * 0.8);
 
     // Set size and position of encounterTypesBox
     encounterTypesBox->setFixedSize(groupBoxWidth, groupBoxHeight);
-    encounterTypesBox->move((newSize.width() - groupBoxWidth) / 2, (newSize.height() - groupBoxHeight) / 1.2);
+    encounterTypesBox->move((newSize.width() - groupBoxWidth) / 1.9, (newSize.height() - groupBoxHeight) / 1.1);
 
-    encounterTypesGroupBox->setFixedSize(encounterTypesFromDB.size() * 500 + 500, groupBoxHeight);
+    encounterTypesGroupBox->setFixedSize(groupBoxWidth, (encounterTypesFromDB.size() * buttonHeight));
 
     // Calculate button dimensions
     int buttonHeight = static_cast<int>(groupBoxHeight * 0.9);
@@ -83,30 +84,28 @@ void EncounterTypesPage::resizeEncounterTypes(QResizeEvent* event) {
     switchToCreateEncounterType->move(static_cast<int>(newSize.width() * 0.875), static_cast<int>(newSize.height() * 0.325));
     switchToCreateEncounterType->setFont(QFont("Arial", static_cast<int>(backToMainMenuButtonWidth * 0.07), QFont::Bold));
 
-    int encounterTypesScrollBarWidth = static_cast<int>(newSize.width() * 0.9);
+    encounterTypesScrollBar->move((newSize.width() - encounterTypesScrollBar->width()), (newSize.height() - encounterTypesScrollBar->height()) * 0.9);
 
-    encounterTypesScrollBar->setFixedWidth(encounterTypesScrollBarWidth);
-    encounterTypesScrollBar->move((newSize.width() - encounterTypesScrollBar->width()) / 2, (newSize.height() - encounterTypesScrollBar->height()) * 0.9);
-
-    encounterTypesScrollBar->setMaximum((encounterTypesFromDB.size() * buttonWidth) - encounterTypesBox->width());
-
-    qDebug() << encounterTypesScrollBar->maximum() << "Maximum";
-    qDebug() << encounterTypesGroupBox->width() << "Width";
-    qDebug() << encounterTypesBox->width() << "Width";
-    qDebug() << encounterTypesButtons[0]->width() << "Width";
-    qDebug() << encounterTypesScrollBar->value() << "Value";
+    encounterTypesScrollBar->setMaximum((encounterTypesFromDB.size() * buttonWidth) - encounterTypesBox->height() + 80);
 
     UpdateEachEncounterTypeButtonPixmap();
 }
 
 void EncounterTypesPage::UpdateEachEncounterTypeButtonPixmap() {
     int groupBoxHeight = static_cast<int>(encounterTypesWallpaper->height() * 0.5);
-    int buttonHeight = static_cast<int>(groupBoxHeight * 0.9);
+    int layer = 0;
+    int xLayer = (encounterTypesGroupBox->width() / 400);
+    buttonWidth = encounterTypesGroupBox->width() / xLayer;
 
     // Update each button
     for (int i = 0; i < encounterTypesButtons.size(); i++) {
-        int xPos = i * (buttonWidth + 10) + 10;
-        int yPos = static_cast<int>(groupBoxHeight * 0.02);
+        if ( i != 0 && i % xLayer == 0)
+        {
+            layer++;
+        }
+
+        int xPos = (i % xLayer) * (buttonWidth + 10) + 10;
+        int yPos = static_cast<int>(buttonHeight * layer);
 
         // Set position and size of the button
         encounterTypesButtons[i]->move(xPos, yPos);
@@ -128,7 +127,7 @@ void EncounterTypesPage::AddNewEncounterTypeButton(QString name, QByteArray imag
     QPixmap pixmap;
     pixmap.loadFromData(imageData);
     QIcon icon(pixmap);
-    QSize iconSize(buttonWidth * 2, newButton->height() * 2);  // Adjust as needed
+    QSize iconSize(buttonWidth * 2, newButton->height() * 2);
     icon.actualSize(iconSize);
     newButton->setIcon(icon);
     newButton->setIconSize(iconSize);
@@ -180,8 +179,7 @@ void EncounterTypesPage::AddNewEncounterTypeButton(QString name, QByteArray imag
     newEncounterType.SetImage(imageData);
     encounterTypesFromDB.push_back(newEncounterType);
 
-    // Adjust the scrollbar maximum
-    encounterTypesScrollBar->setMaximum(encounterTypesGroupBox->width() - encounterTypesBox->width());
+    encounterTypesScrollBar->setMaximum(encounterTypesGroupBox->height() - encounterTypesBox->height());
 
     UpdateEachEncounterTypeButtonPixmap();
 }
