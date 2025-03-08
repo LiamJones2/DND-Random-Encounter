@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="contextMenuPolicy">
-   <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+   <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle">
    <string>DNDRandomEncounter</string>
@@ -46,7 +46,7 @@ QMainWindow::close-button { background-color: red; }</string>
     </size>
    </property>
    <property name="contextMenuPolicy">
-    <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+    <enum>Qt::NoContextMenu</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: #fff;</string>
@@ -205,7 +205,7 @@ color: #000;
         </sizepolicy>
        </property>
        <property name="contextMenuPolicy">
-        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+        <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="text">
         <string/>
@@ -269,7 +269,7 @@ color: #000;
         <bool>false</bool>
        </property>
        <property name="contextMenuPolicy">
-        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+        <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="text">
         <string/>
@@ -324,7 +324,8 @@ QPushButton::hover {
         <string>✚</string>
        </property>
        <property name="icon">
-        <iconset theme="camera-photo"/>
+        <iconset theme="camera-photo">
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
       <widget class="QGroupBox" name="EncounterTypesBox">
@@ -416,10 +417,10 @@ color: #000;
       <widget class="QScrollBar" name="EncounterTypesScrollBar">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>420</y>
-         <width>721</width>
-         <height>20</height>
+         <x>760</x>
+         <y>150</y>
+         <width>31</width>
+         <height>261</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -429,18 +430,18 @@ color: #000;
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">QScrollBar:horizontal {
+        <string notr="true">QScrollBar:vertical {
         background-color: #F0F0F0;
-        height: 20px;
+        width: 20px;
         margin: 0px 0px 0px 0px;
     }
-    QScrollBar::handle:horizontal {
+    QScrollBar::handle:vertical {
         background-color: #000000;
         border-radius: 10px;
-        min-width: 30%;
+        min-height: 30%;
     }
-    QScrollBar::add-line:horizontal,
-    QScrollBar::sub-line:horizontal {
+    QScrollBar::add-line:vertical,
+    QScrollBar::sub-line:vertical {
         width: 0;
         height: 0;
         subcontrol-position: center;
@@ -453,7 +454,7 @@ color: #000;
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </widget>
@@ -487,7 +488,7 @@ color: #000;
         </sizepolicy>
        </property>
        <property name="contextMenuPolicy">
-        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+        <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="text">
         <string/>
@@ -592,9 +593,6 @@ QScrollBar::add-line:vertical,
         <property name="value">
          <number>0</number>
         </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Vertical</enum>
-        </property>
        </widget>
       </widget>
       <widget class="QPushButton" name="GetRandomEncounter">
@@ -664,7 +662,8 @@ QPushButton::hover {
         <string>✚</string>
        </property>
        <property name="icon">
-        <iconset theme="camera-photo"/>
+        <iconset theme="camera-photo">
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </widget>
@@ -722,7 +721,7 @@ color: #000;
         </sizepolicy>
        </property>
        <property name="contextMenuPolicy">
-        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+        <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="text">
         <string/>
@@ -776,9 +775,6 @@ border-radius: 10px;color:white;</string>
        <property name="text">
         <string/>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
       </widget>
       <widget class="QLabel" name="EncounterDescription">
        <property name="geometry">
@@ -796,9 +792,6 @@ border-radius: 10px;color:white; font-size:20px;</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -897,7 +890,7 @@ color: #000;
         <bool>false</bool>
        </property>
        <property name="contextMenuPolicy">
-        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+        <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="text">
         <string/>
@@ -1133,7 +1126,7 @@ color: #000;
         <bool>false</bool>
        </property>
        <property name="contextMenuPolicy">
-        <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+        <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="text">
         <string/>

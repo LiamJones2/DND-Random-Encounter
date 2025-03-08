@@ -54,10 +54,10 @@ void DNDRandomEncounter::resizeEvent(QResizeEvent* event) {
 }
 
 void DNDRandomEncounter::UpdateEncounterTypesScrollBar() {
-	int backToMainMenuButtonX = EncounterTypesPage::encounterTypesScrollBar->value();
-	int backToMainMenuButtonY = EncounterTypesPage::encounterTypesGroupBox->y();
+	int backToMainMenuButtonX = EncounterTypesPage::encounterTypesGroupBox->x();
+	int backToMainMenuButtonY = EncounterTypesPage::encounterTypesScrollBar->value();
 
-	EncounterTypesPage::encounterTypesGroupBox->move(-backToMainMenuButtonX, backToMainMenuButtonY);
+	EncounterTypesPage::encounterTypesGroupBox->move(backToMainMenuButtonX, -backToMainMenuButtonY);
 }
 
 void DNDRandomEncounter::UpdateEncountersScrollBar() {
@@ -70,9 +70,8 @@ void DNDRandomEncounter::UpdateEncountersScrollBar() {
 }
 
 void DNDRandomEncounter::SetupEncounterTypes() {
-	int encounterTypeWidth = 500;  // Set to your desired width
+	int encounterTypeWidth = 500;
 
-	// Distribute encounterTypes horizontally
 	for (int i = 0; i < EncounterTypesPage::encounterTypesFromDB.size(); ++i) {
 		int xPos = i * (encounterTypeWidth + encounterTypeWidth * 0.045) + 10;
 		int yPos = 0;
@@ -83,7 +82,6 @@ void DNDRandomEncounter::SetupEncounterTypes() {
 		QPixmap pixmap;
 		pixmap.loadFromData(EncounterTypesPage::encounterTypesFromDB[i].imageData);
 
-		// Set the pixmap as an icon on the QPushButton
 		button->setIcon(QIcon(pixmap));
 
 		int selectedEncounterType = EncounterTypesPage::encounterTypesFromDB[i].encounterTypeID;
@@ -118,7 +116,6 @@ void DNDRandomEncounter::SetupEncounters() {
 
 	int encounterTypeWidth = EncountersPage::encountersGroupBox->width() - 20;
 
-	// Distribute encounters horizontally
 	for (int i = 0; i < EncountersPage::listOfEncounters.size(); ++i) {
 		int xPos = 0;
 		int yPos = i * (100 + 100 * 0.045);
