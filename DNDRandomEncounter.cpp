@@ -72,19 +72,18 @@ void DNDRandomEncounter::UpdateEncountersScrollBar() {
 void DNDRandomEncounter::SetupEncounterTypes() {
 	int encounterTypeWidth = 500;
 
-	for (int i = 0; i < EncounterTypesPage::encounterTypesFromDB.size(); ++i) {
+	QElapsedTimer timer;
+	timer.start();
+
+	int i = 0;
+	for (const auto& encounterType : EncounterTypesPage::encounterTypesFromDB) {
 		int xPos = i * (encounterTypeWidth + encounterTypeWidth * 0.045) + 10;
 		int yPos = 0;
 
 		QPushButton* button = new QPushButton("", EncounterTypesPage::encounterTypesGroupBox);
 		button->setGeometry(xPos, yPos, encounterTypeWidth, EncounterTypesPage::encounterTypesGroupBox->height());
 
-		QPixmap pixmap;
-		pixmap.loadFromData(EncounterTypesPage::encounterTypesFromDB[i].imageData);
-
-		button->setIcon(QIcon(pixmap));
-
-		int selectedEncounterType = EncounterTypesPage::encounterTypesFromDB[i].encounterTypeID;
+		int selectedEncounterType = encounterType.encounterTypeID;
 
 		connect(button, &QPushButton::pressed, this, &DNDRandomEncounter::ButtonPressed);
 		connect(button, &QPushButton::released, this, [this, selectedEncounterType]() {
@@ -92,18 +91,20 @@ void DNDRandomEncounter::SetupEncounterTypes() {
 			});
 
 		button->show();
-
 		button->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
 
-		QString imageStyleSheet = QString("QPushButton { border: none; background-image: url('data:image/png;base64,%1'); background-position: center; background-repeat: no-repeat; background-attachment: scroll; background-origin: content; background-clip: border; background-size: cover; background-color:#5F5D5C; }").arg(QString(EncounterTypesPage::encounterTypesFromDB[i].imageData.toBase64()));
+		/*QString imageStyleSheet = QString("QPushButton { border: none; background-image: url('data:image/png;base64,%1'); background-position: center; background-repeat: no-repeat; background-attachment: scroll; background-origin: content; background-clip: border; background-size: cover; background-color:#5F5D5C; }")
+			.arg(QString(encounterType.imageData.toBase64()));
 		button->setStyleSheet(imageStyleSheet);
-
-		button->setMinimumSize(encounterTypeWidth, EncounterTypesPage::encounterTypesGroupBox->height());
+		button->setMinimumSize(encounterTypeWidth, EncounterTypesPage::encounterTypesGroupBox->height());*/
 
 		EncounterTypesPage::encounterTypesButtons.push_back(button);
 
-		qDebug() << EncounterTypesPage::encounterTypesFromDB[i].name;
+		qDebug() << encounterType.name;
+		++i;
 	}
+
+	qDebug() << timer.elapsed() << " time to setup Encounter Types";
 }
 
 void DNDRandomEncounter::SetupEncounters() {

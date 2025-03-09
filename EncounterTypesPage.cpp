@@ -42,11 +42,15 @@ void EncounterTypesPage::SetUIItemsEncounterTypes(QWidget& mainWindow) {
 }
 
 void EncounterTypesPage::SetupEncounterTypesPixmap() {
+    QElapsedTimer timer;
+    timer.start();
     for (const auto& encounterType : encounterTypesFromDB) {
         QPixmap pixmap;
         pixmap.loadFromData(encounterType.imageData);
         buttonPixmaps.push_back(pixmap);
     }
+
+    qDebug() << timer.elapsed() << " time to load Encounter Types Pixmap";
 }
 
 // Resizes everything in the encounter types page when the window is resized
