@@ -1,4 +1,5 @@
 #include "Database.h"
+#include <QElapsedTimer.h>
 
 namespace Database {
 	QSqlDatabase db;
@@ -91,8 +92,10 @@ void Database::CreateEncountersTable() {
 void Database::GetEncounterTypes(DNDRandomEncounter& randomEncounter) {
 	// Check if the database opened successfully
 	if (db.open()) {
-
+		qDebug() << "Started to load encounter types";
 		// Creates query to get all data from Encounter Types and stores them
+		QElapsedTimer timer;
+		timer.start();
 		QSqlQuery query;
 		query.prepare("SELECT * FROM EncounterType");
 
@@ -112,6 +115,8 @@ void Database::GetEncounterTypes(DNDRandomEncounter& randomEncounter) {
 				EncounterTypesPage::encounterTypesFromDB.push_back(newEncounterType);
 			}
 		}
+
+		qDebug() << timer.elapsed() << " time to load Encounter Types";
 	}
 	else {
 		// Creates table if database cannot be accessed
